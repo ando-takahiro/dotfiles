@@ -4,8 +4,6 @@ filetype off                   " required for neobundle
 filetype plugin indent off     " required for neobundle
 if has('vim_starting')
   set runtimepath+=~/.vim/neobundle/
-
-  filetype off
   call neobundle#rc(expand('~/.vim-neobundle'))
 endif
 
