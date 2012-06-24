@@ -1,14 +1,14 @@
 DOTFILES=$(dirname $0)/..
 
-for f in $DOTFILES/files/*
+for f in $DOTFILES/files/* $DOTFILES/files/.*
 do
-    if [[ $f =~ \/\.$ ]] ; then
+    if echo $f | grep -e \/\.$ ; then
         continue
     fi
-    if [[ $f =~ \/\.\.$ ]] ; then
+    if echo $f | grep -e \/\.\.$ ; then
         continue
     fi
-    if [[ $f =~ \~$ ]] ; then
+    if echo $f | grep -e \~$ ; then
         continue
     fi
     ln -s $f
