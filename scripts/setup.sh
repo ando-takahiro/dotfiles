@@ -1,5 +1,5 @@
 DOTFILES=$(dirname $0)/..
 
-pushd
+pushd ~/
 ln -s $DOTFILES/*
 popd
