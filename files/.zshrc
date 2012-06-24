@@ -1,13 +1,11 @@
 # users generic .zshrc file for zsh(1)
 
-
 ## Environment variable configuration
 #
 # LANG
 # http://curiousabt.blog27.fc2.com/blog-entry-65.html
 export LANG=ja_JP.UTF-8
 export LESSCHARSET=utf-8
-
 
 ## Default shell configuration
 #
@@ -117,15 +115,6 @@ RPROMPT="%1(v|%F${CYAN}%1v%2v%f|)${vcs_info_git_pushed}${RESET}${WHITE}[${BLUE}%
     ;;
 esac
 
-#case "$TERM" in
-#    xterm*|kterm*|rxvt*)
-#    PROMPT=$(print "%B%{\e[34m%}%m:%(5~,%-2~/.../%2~,%~)%{\e[33m%}%# %b") PROMPT=$(print "%{\e]2;%n@%m: %~\7%}$PROMPT") # title bar
-#    ;;
-#    *)
-#    PROMPT='%m:%c%# '
-#    ;;
-#esac
-
 # 指定したコマンド名がなく、ディレクトリ名と一致した場合 cd する
 setopt auto_cd
 
@@ -232,80 +221,9 @@ setopt inc_append_history
 
 # history (fc -l) コマンドをヒストリリストから取り除く。
 setopt hist_no_store
-# サスペンド中のプロセスと同じコマンド名を実行した場合はリジュームする
-#setopt auto_resume
-
-# =command を command のパス名に展開する
-#setopt equals
-
-# ファイル名で #, ~, ^ の 3 文字を正規表現として扱う
-#setopt extended_glob
-
-# zsh の開始・終了時刻をヒストリファイルに書き込む
-#setopt extended_history
-
-# Ctrl+S/Ctrl+Q によるフロー制御を使わないようにする
-#setopt NO_flow_control
-
-# 各コマンドが実行されるときにパスをハッシュに入れる
-#setopt hash_cmds
-
-# コマンドラインの先頭がスペースで始まる場合ヒストリに追加しない
-#setopt hist_ignore_space
-
-# ヒストリを呼び出してから実行する間に一旦編集できる状態になる
-#setopt hist_verify
-
-# シェルが終了しても裏ジョブに HUP シグナルを送らないようにする
-#setopt NO_hup
-
-# Ctrl+D では終了しないようになる（exit, logout などを使う）
-#setopt ignore_eof
-
-# コマンドラインでも # 以降をコメントと見なす
-#setopt interactive_comments
-
-# メールスプール $MAIL が読まれていたらワーニングを表示する
-#setopt mail_warning
-
-# ファイル名の展開でディレクトリにマッチした場合末尾に / を付加する
-#setopt mark_dirs
-
-# ファイル名の展開で、辞書順ではなく数値的にソートされるようになる
-#setopt numeric_glob_sort
 
 # コマンド名に / が含まれているとき PATH 中のサブディレクトリを探す
 setopt path_dirs
-
-# 戻り値が 0 以外の場合終了コードを表示する
-# setopt print_exit_value
-
-# pushd を引数なしで実行した場合 pushd $HOME と見なされる
-#setopt pushd_to_home
-
-# rm * などの際、本当に全てのファイルを消して良いかの確認しないようになる
-#setopt rm_star_silent
-
-# rm_star_silent の逆で、10 秒間反応しなくなり、頭を冷ます時間が与えられる
-#setopt rm_star_wait
-
-# for, repeat, select, if, function などで簡略文法が使えるようになる
-#setopt short_loops
-
-# デフォルトの複数行コマンドライン編集ではなく、１行編集モードになる
-#setopt single_line_zle
-
-# コマンドラインがどのように展開され実行されたかを表示するようになる
-#setopt xtrace
-
-# ^でcd ..する
-function cdup() {
-echo
-cd ..
-zle reset-prompt
-}
-zle -N cdup
-# bindkey '\^' cdup
 
 # ctrl-w, ctrl-bキーで単語移動
 bindkey "^W" forward-word
@@ -321,29 +239,22 @@ zstyle ':zle:*' word-style unspecified
 autoload -Uz url-quote-magic
 zle -N self-insert url-quote-magic
 
-# 勝手にpushd
-setopt autopushd
-
 ## Completion configuration
 #
 fpath=(~/.zsh/functions/Completion ${fpath})
 autoload -U compinit
 compinit -u
 
-
 ## zsh editor
 #
 autoload zed
 
-
 ## Prediction configuration
 #
 autoload predict-on
-#predict-off
 
 ## Command Line Stack [Esc]-[q]
 bindkey -a 'q' push-line
-
 
 ## Alias configuration
 #
@@ -410,13 +321,9 @@ dumb)
     ;;
 esac
 
-
-
 export EDITOR=vim
-export PATH=$PATH:$HOME/local/bin:/usr/local/git/bin
-export PATH=$PATH:$HOME/dotfiles/bin
-export PATH=$PATH:/sbin:usr/local/bin
-export MANPATH=$MANPATH:/opt/local/man:/usr/local/share/man
+export PATH=$PATH:$HOME/bin
+[ -d ~/local/bin ] && export PATH=$PATH:$HOME/local/bin
 
 expand-to-home-or-insert () {
         if [ "$LBUFFER" = "" -o "$LBUFFER[-1]" = " " ]; then
@@ -469,90 +376,6 @@ bindkey "^J"  accept-line # no magic
 bindkey " "   magic-abbrev-expand-and-insert
 bindkey "."   magic-abbrev-expand-and-insert
 bindkey "^x " no-magic-abbrev-expand
-
-# Incremental completion on zsh
-# http://mimosa-pudica.net/src/incr-0.2.zsh
-# やっぱりauto_menu使いたいのでoff
-# source ~/.zsh/incr*.zsh
-
-# auto-fuの設定。^PとかのHistory検索と相性が悪いのでひとまず無効に。
-# http://d.hatena.ne.jp/tarao/20100531/1275322620
-# incremental completion
-# if is-at-least 4.3.10; then
-    # function () { # precompile
-        # local A
-        # A=~/.zsh/auto-fu.zsh/auto-fu.zsh
-        # [[ -e "${A:r}.zwc" ]] && [[ "$A" -ot "${A:r}.zwc" ]] ||
-        # zsh -c "source $A; auto-fu-zcompile $A ${A:h}" >/dev/null 2>&1
-    # }
-    # source ~/.zsh/auto-fu.zsh/auto-fu; auto-fu-install
-    # function zle-line-init () { auto-fu-init }
-    # zle -N zle-line-init
-    # zstyle ':auto-fu:highlight' input bold
-    # zstyle ':auto-fu:highlight' completion fg=white
-    # zstyle ':auto-fu:var' postdisplay ''
-    # function afu+cancel () {
-        # afu-clearing-maybe
-        # ((afu_in_p == 1)) && { afu_in_p=0; BUFFER="$buffer_cur"; }
-    # }
-    # function bindkey-advice-before () {
-        # local key="$1"
-        # local advice="$2"
-        # local widget="$3"
-        # [[ -z "$widget" ]] && {
-            # local -a bind
-            # bind=(`bindkey -M main "$key"`)
-            # widget=$bind[2]
-        # }
-        # local fun="$advice"
-        # if [[ "$widget" != "undefined-key" ]]; then
-            # local code=${"$(<=(cat <<"EOT"
-                # function $advice-$widget () {
-                    # zle $advice
-                    # zle $widget
-                # }
-                # fun="$advice-$widget"
-# EOT
-            # ))"}
-            # eval "${${${code//\$widget/$widget}//\$key/$key}//\$advice/$advice}"
-        # fi
-        # zle -N "$fun"
-        # bindkey -M afu "$key" "$fun"
-    # }
-    # bindkey-advice-before "^G" afu+cancel
-    # bindkey-advice-before "^[" afu+cancel
-    # bindkey-advice-before "^J" afu+cancel afu+accept-line
-
-    # # delete unambiguous prefix when accepting line
-    # function afu+delete-unambiguous-prefix () {
-        # afu-clearing-maybe
-        # local buf; buf="$BUFFER"
-        # local bufc; bufc="$buffer_cur"
-        # [[ -z "$cursor_new" ]] && cursor_new=-1
-        # [[ "$buf[$cursor_new]" == ' ' ]] && return
-        # [[ "$buf[$cursor_new]" == '/' ]] && return
-        # ((afu_in_p == 1)) && [[ "$buf" != "$bufc" ]] && {
-            # # there are more than one completion candidates
-            # zle afu+complete-word
-            # [[ "$buf" == "$BUFFER" ]] && {
-                # # the completion suffix was an unambiguous prefix
-                # afu_in_p=0; buf="$bufc"
-            # }
-            # BUFFER="$buf"
-            # buffer_cur="$bufc"
-        # }
-    # }
-    # zle -N afu+delete-unambiguous-prefix
-    # function afu-ad-delete-unambiguous-prefix () {
-        # local afufun="$1"
-        # local code; code=$functions[$afufun]
-        # eval "function $afufun () { zle afu+delete-unambiguous-prefix; $code }"
-    # }
-    # afu-ad-delete-unambiguous-prefix afu+accept-line
-    # afu-ad-delete-unambiguous-prefix afu+accept-line-and-down-history
-    # afu-ad-delete-unambiguous-prefix afu+accept-and-hold
-# fi
-
 
 function rmf(){
    for file in $*
@@ -610,6 +433,3 @@ esac
 ## local固有設定
 #
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
-
-# bash_profile
-source ~/.bash_profile

@@ -1,0 +1,5 @@
+if [ -e ~/local/node-current/ ] ; then
+    rm ~/local/node-current
+fi
+
+ln -s ~/local/node-$1* ~/local/node-current
