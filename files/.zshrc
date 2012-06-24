@@ -433,3 +433,6 @@ esac
 ## local固有設定
 #
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
+# tmux create session or attach session
+~/bin/tmux.start

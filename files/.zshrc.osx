@@ -9,9 +9,6 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 alias vimdiff='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim -d "$@"'
 
-# tmux
-alias tmux=tmux.osx
-
 # Java
 export JAVA_HOME=/Library/Java/Home
 export PATH=$JAVA_HOME/bin:$PATH
