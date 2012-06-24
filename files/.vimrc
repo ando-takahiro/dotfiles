@@ -15,6 +15,7 @@ NeoBundle 'git://github.com/mileszs/ack.vim.git'
 NeoBundle 'git://github.com/embear/vim-localvimrc.git'
 NeoBundle 'git://github.com/tpope/vim-fugitive.git'
 NeoBundle 'git://github.com/tpope/vim-unimpaired.git'
+NeoBundle 'git://github.com/altercation/vim-colors-solarized.git'
 if OSTYPE == "Darwin\n"
   NeoBundle 'git://github.com/aniero/vim-copy-as-rtf.git'
 endif
@@ -39,7 +40,13 @@ set wildmenu
 set wildmode=list:full
 set noswapfile
 set autoread
+set foldmethod=marker
 let g:localvimrc_ask = 0
+
+" colorscheme(solarized)
+"let g:solarized_termcolors = 256
+set background=light
+colorscheme solarized
 
 " マウス
 set mouse=a
