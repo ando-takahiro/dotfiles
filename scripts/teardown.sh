@@ -1,6 +1,6 @@
 DOTFILES=$(dirname $0)/..
 
-pushd
+pushd ~/
 for f in $DOTFILES/files/.*
 do
     if [[ $f =~ \/\.$ ]] ; then
