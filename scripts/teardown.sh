@@ -11,5 +11,5 @@ do
     if [[ $f =~ \~$ ]] ; then
         continue
     fi
-    rm $(basename $f)
+    ([ -f $f ] || [ -d $f ]) && rm $(basename $f)
 done
