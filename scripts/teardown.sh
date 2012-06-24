@@ -1,6 +1,5 @@
 DOTFILES=$(dirname $0)/..
 
-pushd ~/
 for f in $DOTFILES/files/.*
 do
     if [[ $f =~ \/\.$ ]] ; then
@@ -14,4 +13,3 @@ do
     fi
     rm $f
 done
-popd
