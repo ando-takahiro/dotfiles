@@ -1,3 +1,5 @@
+let OSTYPE = system('uname')
+
 " NeoBundle
 set nocompatible               " required for neobundle
 filetype off                   " required for neobundle
@@ -13,7 +15,7 @@ NeoBundle 'git://github.com/mileszs/ack.vim.git'
 NeoBundle 'git://github.com/embear/vim-localvimrc.git'
 NeoBundle 'git://github.com/tpope/vim-fugitive.git'
 NeoBundle 'git://github.com/tpope/vim-unimpaired.git'
-if has("darwin")
+if OSTYPE == "Darwin\n"
   NeoBundle 'git://github.com/aniero/vim-copy-as-rtf.git'
 endif
 
