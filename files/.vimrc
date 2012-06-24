@@ -1,11 +1,12 @@
 " NeoBundle
+set nocompatible               " required for neobundle
+filetype off                   " required for neobundle
+filetype plugin indent off     " required for neobundle
 if has('vim_starting')
-  set runtimepath+='set runtimepath+=' . expand(~/.vim/neobundle/autoload/neobundle.vim)
+  set runtimepath+=~/.vim/neobundle/
 
   filetype off
   call neobundle#rc(expand('~/.vim-neobundle'))
-  filetype plugin on
-  filetype indent on
 endif
 
 NeoBundle 'git://github.com/Shougo/neocomplcache.git'
@@ -15,6 +16,9 @@ NeoBundle 'git://github.com/embear/vim-localvimrc.git'
 NeoBundle 'git://github.com/tpope/vim-fugitive.git'
 NeoBundle 'git://github.com/tpope/vim-unimpaired.git'
 NeoBundle 'git://github.com/aniero/vim-copy-as-rtf.git'
+
+filetype plugin on
+filetype indent on
 
 " basic settings
 syntax on
