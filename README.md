@@ -11,7 +11,7 @@
 ### Install
 
  1. clear dot files in your home directory
- 1. install git, zsh
+ 1. install git, zsh, tmux
  1. git clone $(THIS_REPO)
  1. cd
  1. $(THIS_REPO)/scripts/setup.sh
