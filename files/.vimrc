@@ -3,9 +3,9 @@ set nocompatible
 filetype off
 
 if has('vim_starting')
-set runtimepath+=~/.vim/neobundle/
+set runtimepath+=~/.vim/neobundle/autoload/neobundle.vim
 
-call neobundle#rc(expand('~/.vim/bundle'))
+call neobundle#rc(expand('~/.bundle'))
 endif
 
 NeoBundle 'git://github.com/Shougo/neocomplcache.git'
