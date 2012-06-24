@@ -1,11 +1,12 @@
+let OSTYPE = system('uname')
+
 " NeoBundle
-set nocompatible
-filetype off
-
+set nocompatible               " required for neobundle
+filetype off                   " required for neobundle
+filetype plugin indent off     " required for neobundle
 if has('vim_starting')
-set runtimepath+=~/.vim/neobundle/autoload/neobundle.vim
-
-call neobundle#rc(expand('~/.bundle'))
+  set runtimepath+=~/.vim/neobundle/
+  call neobundle#rc(expand('~/.vim-neobundle'))
 endif
 
 NeoBundle 'git://github.com/Shougo/neocomplcache.git'
@@ -14,11 +15,14 @@ NeoBundle 'git://github.com/mileszs/ack.vim.git'
 NeoBundle 'git://github.com/embear/vim-localvimrc.git'
 NeoBundle 'git://github.com/tpope/vim-fugitive.git'
 NeoBundle 'git://github.com/tpope/vim-unimpaired.git'
-NeoBundle 'git://github.com/aniero/vim-copy-as-rtf.git'
+if OSTYPE == "Darwin\n"
+  NeoBundle 'git://github.com/aniero/vim-copy-as-rtf.git'
+endif
 
 filetype plugin on
 filetype indent on
 
+" basic settings
 syntax on
 
 set ts=4 sw=4
