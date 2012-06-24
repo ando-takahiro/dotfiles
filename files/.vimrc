@@ -13,7 +13,9 @@ NeoBundle 'git://github.com/mileszs/ack.vim.git'
 NeoBundle 'git://github.com/embear/vim-localvimrc.git'
 NeoBundle 'git://github.com/tpope/vim-fugitive.git'
 NeoBundle 'git://github.com/tpope/vim-unimpaired.git'
-NeoBundle 'git://github.com/aniero/vim-copy-as-rtf.git'
+if has("darwin")
+  NeoBundle 'git://github.com/aniero/vim-copy-as-rtf.git'
+endif
 
 filetype plugin on
 filetype indent on
