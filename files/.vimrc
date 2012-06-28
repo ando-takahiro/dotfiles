@@ -17,6 +17,7 @@ NeoBundle 'git://github.com/tpope/vim-fugitive.git'
 NeoBundle 'git://github.com/tpope/vim-unimpaired.git'
 NeoBundle 'git://github.com/altercation/vim-colors-solarized.git'
 NeoBundle 'git://github.com/tyru/open-browser.vim.git'
+NeoBundle 'git://github.com/vitaly/vim-gitignore.git'
 if OSTYPE == "Darwin\n"
   NeoBundle 'git://github.com/aniero/vim-copy-as-rtf.git'
 endif
