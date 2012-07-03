@@ -435,5 +435,9 @@ esac
 #
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
+## perlbrew
+[ -f $HOME/perl5/perlbrew/etc/bashrc ] && source $HOME/perl5/perlbrew/etc/bashrc
+
+
 # tmux create session or attach session
 ~/bin/tmux.start
