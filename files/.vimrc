@@ -23,6 +23,8 @@ NeoBundle 'git://github.com/tyru/open-browser.vim.git'
 NeoBundle 'git://github.com/vitaly/vim-gitignore.git'
 NeoBundle 'git://github.com/plasticboy/vim-markdown.git'
 NeoBundle 'git://github.com/davidoc/taskpaper.vim.git'
+NeoBundle 'git://github.com/tmhedberg/matchit.git'
+NeoBundle 'git://github.com/vim-scripts/mru.vim.git'
 
 if OSTYPE == "Darwin\n"
   NeoBundle 'git://github.com/aniero/vim-copy-as-rtf.git'

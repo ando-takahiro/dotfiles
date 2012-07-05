@@ -440,4 +440,4 @@ esac
 
 
 # tmux create session or attach session
-~/bin/tmux.start
+~/bin/tmux-start
