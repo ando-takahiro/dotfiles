@@ -2,7 +2,8 @@
 
  - files
     - bin
-     - tmux.start : create or attach session
+     - tmux-start : create or attach session
+     - tmux-new : create session
     - dotfiles
  - scripts
     - setup.sh : make symbolic links to install(run in ~/)
