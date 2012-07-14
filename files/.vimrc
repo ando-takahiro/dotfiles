@@ -54,10 +54,6 @@ set foldmethod=marker
 let g:localvimrc_ask = 0
 
 " colorscheme(solarized)
-if OSTYPE == "Linux\n"
-    let g:solarized_termcolors = 256
-    se t_Co=256
-endif
 set background=light
 colorscheme solarized
 
