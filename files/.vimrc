@@ -23,8 +23,9 @@ NeoBundle 'git://github.com/tyru/open-browser.vim.git'
 NeoBundle 'git://github.com/vitaly/vim-gitignore.git'
 NeoBundle 'git://github.com/tmhedberg/matchit.git'
 NeoBundle 'git://github.com/vim-scripts/mru.vim.git'
-NeoBundle 'git://github.com/vim-scripts/mru.vim.git'
 NeoBundle 'git://github.com/scrooloose/nerdtree.git'
+NeoBundle 'git://github.com/bling/vim-airline.git'
+NeoBundle 'git://github.com/terryma/vim-multiple-cursors.git'
 
 if OSTYPE == "Darwin\n"
   NeoBundle 'git://github.com/aniero/vim-copy-as-rtf.git'
@@ -52,10 +53,6 @@ set noswapfile
 set autoread
 set foldmethod=marker
 let g:localvimrc_ask = 0
-
-" colorscheme(solarized)
-set background=light
-colorscheme solarized
 
 " マウス
 set mouse=a
@@ -153,3 +150,7 @@ autocmd BufRead,BufNewFile *.md  set filetype=markdown
 
 " clipboard
 set clipboard=unnamed
+
+" colorscheme(solarized)
+set background=light
+colorscheme solarized
