@@ -8,3 +8,5 @@ do
     [ $f = .DSStore ] && continue
     ln -s $f
 done
+
+vim -c ':NeoBundleInstall!' -c ':q!'
