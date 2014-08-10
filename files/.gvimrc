@@ -1,2 +1,3 @@
 " colorscheme(solarized)
-set background=light
+set background=dark
+set transparency=10
