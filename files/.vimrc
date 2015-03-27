@@ -27,6 +27,7 @@ NeoBundle 'git://github.com/vim-scripts/mru.vim.git'
 NeoBundle 'git://github.com/scrooloose/nerdtree.git'
 NeoBundle 'git://github.com/bling/vim-airline.git'
 NeoBundle 'git://github.com/terryma/vim-multiple-cursors.git'
+NeoBundle 'altercation/vim-colors-solarized'
 
 if OSTYPE == "Darwin\n"
   NeoBundle 'git://github.com/aniero/vim-copy-as-rtf.git'

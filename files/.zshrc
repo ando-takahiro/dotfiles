@@ -324,7 +324,6 @@ esac
 export EDITOR=vim
 export PATH=$PATH:$HOME/bin
 [ -d ~/local/node/bin ] && export PATH=$PATH:$HOME/local/node/bin
-[ -d ~/local/mongo/bin ] && export PATH=$PATH:$HOME/local/mongo/bin
 
 expand-to-home-or-insert () {
         if [ "$LBUFFER" = "" -o "$LBUFFER[-1]" = " " ]; then
