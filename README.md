@@ -19,7 +19,7 @@
    - on linux: xclip
  1. chsh -s /bin/zsh
  1. relogin
- 1. CTRL+T CTRL+I (to install tmux plugins)
+ 1. CTRL+T SHIFT+I (to install tmux plugins)
  1. git clone $(THIS_REPO)
  1. cd
  1. $(THIS_REPO)/scripts/setup.sh
