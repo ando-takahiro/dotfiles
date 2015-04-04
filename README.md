@@ -14,14 +14,15 @@
 ### Install
 
  1. clear dot files in your home directory
- 1. install git, zsh, tmux, reattach-to-user-namespace, [solarized](https://github.com/altercation/solarized)
+ 1. install git, zsh, tmux, [solarized](https://github.com/altercation/solarized)
+   - on mac: reattach-to-user-namespace
+   - on linux: xclip
  1. chsh -s /bin/zsh
  1. relogin
+ 1. CTRL+T CTRL+I (to install tmux plugins)
  1. git clone $(THIS_REPO)
  1. cd
  1. $(THIS_REPO)/scripts/setup.sh
- 1. vim . (you will get warnings on vim boot)
- 1. :NeoBundleInstall (in vim)
 
 ### Update
 
