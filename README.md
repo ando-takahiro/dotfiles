@@ -14,8 +14,8 @@
 ### Install
 
  1. clear dot files in your home directory
- 1. install git, zsh, tmux
- 1. chsh -s zsh
+ 1. install git, zsh, tmux, reattach-to-user-namespace, [solarized](https://github.com/altercation/solarized)
+ 1. chsh -s /bin/zsh
  1. relogin
  1. git clone $(THIS_REPO)
  1. cd
