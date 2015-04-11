@@ -151,7 +151,11 @@ autocmd BufRead,BufNewFile *.mkd  set filetype=markdown
 autocmd BufRead,BufNewFile *.md  set filetype=markdown
 
 " clipboard
+if OSTYPE == "Linux\n"
 set clipboard=unnamedplus
+else
+set clipboard=unnamed
+endif
 
 " colorscheme(solarized)
 set background=light
