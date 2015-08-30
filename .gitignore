@@ -1,4 +1,5 @@
 *~
 .DS_Store
 files/.vim/.netrwhist
+files/.vim/bundle
 files/.tmux/plugins

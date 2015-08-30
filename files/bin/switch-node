@@ -1,9 +1,0 @@
-if [ -e ~/local/node ] ; then
-    rm ~/local/node
-fi
-
-ln -s ~/local/node-$1* ~/local/node
-
-# install global modules
-npm install jshint -g
-npm install static-here -g

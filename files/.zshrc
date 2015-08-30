@@ -323,7 +323,6 @@ esac
 
 export EDITOR=vim
 export PATH=$PATH:$HOME/bin
-[ -d ~/local/node/bin ] && export PATH=$PATH:$HOME/local/node/bin
 
 expand-to-home-or-insert () {
         if [ "$LBUFFER" = "" -o "$LBUFFER[-1]" = " " ]; then
@@ -440,3 +439,8 @@ esac
 
 # tmux create session or attach session
 ~/bin/tmux-start
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+export NVM_DIR="/Users/ando/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

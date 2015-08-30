@@ -1,19 +1,34 @@
 let OSTYPE = system('uname')
 
-" NeoBundle
-set nocompatible               " required for neobundle
-filetype off                   " required for neobundle
-filetype plugin indent off     " required for neobundle
+"NeoBundle Scripts-----------------------------
 if has('vim_starting')
-  set runtimepath+=~/.vim/neobundle/
-  call neobundle#rc(expand('~/.vim-neobundle'))
+  if &compatible
+    set nocompatible               " Be iMproved
+  endif
+
+  " Required:
+  set runtimepath+=/Users/ando/.vim/bundle/neobundle.vim/
 endif
 
-NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
-NeoBundle 'git://github.com/Shougo/vimproc.git'
+" Required:
+call neobundle#begin(expand('/Users/ando/.vim/bundle'))
+
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" Add or remove your Bundles here:
+NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'ctrlpvim/ctrlp.vim'
+NeoBundle 'flazz/vim-colorschemes'
+
+" You can specify revision/branch/tag.
+NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
+
+" My own modules
 NeoBundle 'git://github.com/Shougo/neocomplcache.git'
-NeoBundle 'git://github.com/Shougo/neosnippet.git'
-NeoBundle 'git://github.com/Shougo/neosnippet-snippets.git'
 NeoBundle 'git://github.com/ujihisa/neco-look.git'
 NeoBundle 'git://github.com/rking/ag.vim.git'
 NeoBundle 'git://github.com/embear/vim-localvimrc.git'
@@ -28,13 +43,21 @@ NeoBundle 'git://github.com/scrooloose/nerdtree.git'
 NeoBundle 'git://github.com/bling/vim-airline.git'
 NeoBundle 'git://github.com/terryma/vim-multiple-cursors.git'
 NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'git://github.com/scrooloose/syntastic.git'
 
 if OSTYPE == "Darwin\n"
-  NeoBundle 'git://github.com/aniero/vim-copy-as-rtf.git'
+  NeoBundle 'git://github.com/zerowidth/vim-copy-as-rtf.git'
 endif
+" Required:
+call neobundle#end()
 
-filetype plugin on
-filetype indent on
+" Required:
+filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+"End NeoBundle Scripts-------------------------
 
 " basic settings
 syntax on
@@ -81,11 +104,8 @@ set fileformats=unix,dos,mac
 set whichwrap=b,s,[,],<,>
 
 "javascript setting
-autocmd BufNewFile,BufRead Jakefile set filetype=javascript
 let g:SimpleJsIndenter_CaseIndentLevel = -1
 let g:SimpleJsIndenter_BriefMode = 1
-autocmd BufWritePost,FileWritePost *.js JSHint
-autocmd BufNewFile,BufRead Jakefile JSHint
 
 " complcache
 let g:neocomplcache_enable_at_startup = 1 " 起動時に有効化
