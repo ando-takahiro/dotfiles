@@ -62,8 +62,8 @@ NeoBundleCheck
 " basic settings
 syntax on
 
-set ts=4 sw=4
-set softtabstop=4
+set ts=2 sw=2
+set softtabstop=2
 set incsearch
 if has("gui_running")
   set migemo
