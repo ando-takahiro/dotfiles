@@ -180,3 +180,6 @@ endif
 " colorscheme(solarized)
 set background=light
 colorscheme solarized
+
+" syntastic
+let g:syntastic_javascript_checkers = ['eslint']
