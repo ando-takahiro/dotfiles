@@ -44,6 +44,8 @@ NeoBundle 'git://github.com/bling/vim-airline.git'
 NeoBundle 'git://github.com/terryma/vim-multiple-cursors.git'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'git://github.com/scrooloose/syntastic.git'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'mxw/vim-jsx'
 
 if OSTYPE == "Darwin\n"
   NeoBundle 'git://github.com/zerowidth/vim-copy-as-rtf.git'
@@ -102,10 +104,6 @@ set fileformats=unix,dos,mac
 
 "カーソルキーで行末／行頭の移動可能に設定。
 set whichwrap=b,s,[,],<,>
-
-"javascript setting
-let g:SimpleJsIndenter_CaseIndentLevel = -1
-let g:SimpleJsIndenter_BriefMode = 1
 
 " complcache
 let g:neocomplcache_enable_at_startup = 1 " 起動時に有効化
@@ -183,3 +181,6 @@ colorscheme solarized
 
 " syntastic
 let g:syntastic_javascript_checkers = ['eslint']
+
+" mxw/vim-jsx
+let g:jsx_ext_required = 0
