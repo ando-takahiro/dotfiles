@@ -3,3 +3,4 @@
 files/.vim/.netrwhist
 files/.vim/bundle
 files/.tmux/plugins
+files/.tmux/plugins/tpm/**

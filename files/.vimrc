@@ -28,27 +28,27 @@ NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
 " My own modules
-NeoBundle 'git://github.com/Shougo/neocomplcache.git'
-NeoBundle 'git://github.com/ujihisa/neco-look.git'
-NeoBundle 'git://github.com/rking/ag.vim.git'
-NeoBundle 'git://github.com/embear/vim-localvimrc.git'
-NeoBundle 'git://github.com/tpope/vim-fugitive.git'
-NeoBundle 'git://github.com/tpope/vim-unimpaired.git'
-NeoBundle 'git://github.com/altercation/vim-colors-solarized.git'
-NeoBundle 'git://github.com/tyru/open-browser.vim.git'
-NeoBundle 'git://github.com/vitaly/vim-gitignore.git'
-NeoBundle 'git://github.com/tmhedberg/matchit.git'
-NeoBundle 'git://github.com/vim-scripts/mru.vim.git'
-NeoBundle 'git://github.com/scrooloose/nerdtree.git'
-NeoBundle 'git://github.com/bling/vim-airline.git'
-NeoBundle 'git://github.com/terryma/vim-multiple-cursors.git'
+NeoBundle 'Shougo/neocomplcache.git'
+NeoBundle 'ujihisa/neco-look.git'
+NeoBundle 'rking/ag.vim.git'
+NeoBundle 'embear/vim-localvimrc.git'
+NeoBundle 'tpope/vim-fugitive.git'
+NeoBundle 'tpope/vim-unimpaired.git'
+NeoBundle 'altercation/vim-colors-solarized.git'
+NeoBundle 'tyru/open-browser.vim.git'
+NeoBundle 'vitaly/vim-gitignore.git'
+NeoBundle 'tmhedberg/matchit.git'
+NeoBundle 'vim-scripts/mru.vim.git'
+NeoBundle 'scrooloose/nerdtree.git'
+NeoBundle 'bling/vim-airline.git'
+NeoBundle 'terryma/vim-multiple-cursors.git'
 NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'git://github.com/scrooloose/syntastic.git'
+NeoBundle 'scrooloose/syntastic.git'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'mxw/vim-jsx'
 
 if OSTYPE == "Darwin\n"
-  NeoBundle 'git://github.com/zerowidth/vim-copy-as-rtf.git'
+  NeoBundle 'zerowidth/vim-copy-as-rtf.git'
 endif
 " Required:
 call neobundle#end()
@@ -184,3 +184,7 @@ let g:syntastic_javascript_checkers = ['eslint']
 
 " mxw/vim-jsx
 let g:jsx_ext_required = 0
+
+if OSTYPE == "Darwin\n"
+  noremap! ¥ \
+endif

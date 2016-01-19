@@ -15,7 +15,7 @@
 
  1. clear dot files in your home directory
  1. install git, zsh, tmux, [solarized](https://github.com/altercation/solarized)
-   - on mac: reattach-to-user-namespace
+   - for tmux: install tpm(tmux package manager), and do `CTRL+T SHIFT+I`
    - on linux: xclip
  1. chsh -s /bin/zsh
  1. relogin
