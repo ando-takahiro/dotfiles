@@ -23,18 +23,12 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
-
-" You can specify revision/branch/tag.
-NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
-
-" My own modules
 NeoBundle 'Shougo/neocomplcache.git'
 NeoBundle 'ujihisa/neco-look.git'
 NeoBundle 'rking/ag.vim.git'
 NeoBundle 'embear/vim-localvimrc.git'
 NeoBundle 'tpope/vim-fugitive.git'
 NeoBundle 'tpope/vim-unimpaired.git'
-NeoBundle 'altercation/vim-colors-solarized.git'
 NeoBundle 'tyru/open-browser.vim.git'
 NeoBundle 'vitaly/vim-gitignore.git'
 NeoBundle 'tmhedberg/matchit.git'
@@ -44,8 +38,9 @@ NeoBundle 'bling/vim-airline.git'
 NeoBundle 'terryma/vim-multiple-cursors.git'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'scrooloose/syntastic.git'
-NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'othree/yajs.vim'
 NeoBundle 'mxw/vim-jsx'
+NeoBundle 'lrvick/Conque-Shell'
 
 if OSTYPE == "Darwin\n"
   NeoBundle 'zerowidth/vim-copy-as-rtf.git'
@@ -175,15 +170,8 @@ else
 set clipboard=unnamed
 endif
 
-" colorscheme(solarized)
-set background=light
-colorscheme solarized
-
-" syntastic
-let g:syntastic_javascript_checkers = ['eslint']
-
-" mxw/vim-jsx
-let g:jsx_ext_required = 0
+" colorscheme
+colorscheme Tomorrow-Night-Eighties
 
 if OSTYPE == "Darwin\n"
   noremap! ¥ \
