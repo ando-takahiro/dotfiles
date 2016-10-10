@@ -1,18 +1,7 @@
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin/:$PATH
-export PATH=~/bin:$PATH
-export PATH=~/android-sdk-macosx/platform-tools/:$PATH
 
 # Terminal Colorの設定
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
-# vim
-#alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-#alias vimdiff='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim -d "$@"'
-
-# Java
-export JAVA_HOME=$(/usr/libexec/java_home)
-export PATH=$JAVA_HOME/bin:$PATH
-# デフォルトエンコーディングSJISをUTF-8へ
-export _JAVA_OPTIONS="-Dfile.encoding=UTF-8"
