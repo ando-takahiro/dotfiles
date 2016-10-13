@@ -40,7 +40,6 @@ NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'scrooloose/syntastic.git'
 NeoBundle 'othree/yajs.vim'
 NeoBundle 'mxw/vim-jsx'
-NeoBundle 'lrvick/Conque-Shell'
 
 if OSTYPE == "Darwin\n"
   NeoBundle 'zerowidth/vim-copy-as-rtf.git'
@@ -62,9 +61,6 @@ syntax on
 set ts=2 sw=2
 set softtabstop=2
 set incsearch
-if has("gui_running")
-  set migemo
-endif
 set autoindent
 set smarttab
 set expandtab
@@ -167,7 +163,7 @@ autocmd BufRead,BufNewFile *.md  set filetype=markdown
 if OSTYPE == "Linux\n"
 set clipboard=unnamedplus
 else
-set clipboard=unnamed
+set clipboard=unnamed,autoselect
 endif
 
 " colorscheme
