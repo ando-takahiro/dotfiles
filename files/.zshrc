@@ -430,3 +430,5 @@ esac
 ## local固有設定
 #
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

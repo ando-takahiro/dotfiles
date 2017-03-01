@@ -21,7 +21,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'Shougo/neocomplcache.git'
 NeoBundle 'ujihisa/neco-look.git'
@@ -40,6 +39,7 @@ NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'scrooloose/syntastic.git'
 NeoBundle 'othree/yajs.vim'
 NeoBundle 'mxw/vim-jsx'
+NeoBundle 'pmsorhaindo/syntastic-local-eslint.vim'
 
 if OSTYPE == "Darwin\n"
   NeoBundle 'zerowidth/vim-copy-as-rtf.git'
@@ -172,3 +172,27 @@ colorscheme Tomorrow-Night-Eighties
 if OSTYPE == "Darwin\n"
   noremap! ¥ \
 endif
+
+" syntastic-local-eslint settins
+" http://dackdive.hateblo.jp/entry/2016/04/28/090000
+let g:syntastic_javascript_checkers=['eslint']
+
+" ここから下は Syntastic のおすすめの設定
+" ref. https://github.com/scrooloose/syntastic#settings
+
+" エラー行に sign を表示
+let g:syntastic_enable_signs = 1
+" location list を常に更新
+let g:syntastic_always_populate_loc_list = 0
+" location list を常に表示
+let g:syntastic_auto_loc_list = 0
+" ファイルを開いた時にチェックを実行する
+let g:syntastic_check_on_open = 1
+" :wq で終了する時もチェックする
+let g:syntastic_check_on_wq = 0
+
+" http://stackoverflow.com/questions/28573553/how-can-i-make-syntastic-load-a-different-checker-based-on-existance-of-files-in
+autocmd FileType javascript let b:syntastic_checkers = findfile('.eslintrc', '.;') != '' ? ['eslint'] : ['standard']
+
+" fzf
+set rtp+=/usr/local/opt/fzf
