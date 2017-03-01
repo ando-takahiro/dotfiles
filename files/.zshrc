@@ -419,12 +419,10 @@ function __rm_single_file(){
 case "${OSTYPE}" in
 # Mac(Unix)
 darwin*)
-    # ここに設定
     [ -f ~/.zshrc.osx ] && source ~/.zshrc.osx
     ;;
 # Linux
 linux*)
-    # ここに設定
     [ -f ~/.zshrc.linux ] && source ~/.zshrc.linux
     ;;
 esac
@@ -432,3 +430,5 @@ esac
 ## local固有設定
 #
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
