@@ -23,7 +23,6 @@ if dein#load_state('/home/ando/.vim/dein/repos/github.com/Shougo/dein.vim')
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('tpope/vim-fugitive')
-  call dein#add('flazz/vim-colorschemes')
   call dein#add('Shougo/neocomplcache.git')
   call dein#add('ujihisa/neco-look.git')
   call dein#add('rking/ag.vim.git')
@@ -35,9 +34,9 @@ if dein#load_state('/home/ando/.vim/dein/repos/github.com/Shougo/dein.vim')
   call dein#add('tmhedberg/matchit.git')
   call dein#add('vim-scripts/mru.vim.git')
   call dein#add('scrooloose/nerdtree.git')
-  call dein#add('bling/vim-airline.git')
+  call dein#add('vim-airline/vim-airline')
+  call dein#add('vim-airline/vim-airline-themes')
   call dein#add('terryma/vim-multiple-cursors.git')
-  call dein#add('altercation/vim-colors-solarized')
   call dein#add('scrooloose/syntastic.git')
   call dein#add('othree/yajs.vim')
   call dein#add('mxw/vim-jsx')
@@ -57,9 +56,9 @@ filetype plugin indent on
 syntax enable
 
 " If you want to install not installed plugins on startup.
-"if dein#check_install()
-"  call dein#install()
-"endif
+if dein#check_install()
+  call dein#install()
+endif
 
 "End dein Scripts-------------------------
 
@@ -84,12 +83,6 @@ let g:localvimrc_ask = 0
 set mouse=a
 map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <C-E>
-
-" ステータスライン関連
-set laststatus=2
-set statusline=%F%m%r%h%w\%=%{fugitive#statusline()}[%Y]\[%{&ff}]\[%{&fileencoding}]\[%v,%l/%L]
-set wildmenu
-set wildmode=list:longest
 
 " エンコーディング関連
 set ffs=unix,dos,mac " 改行文字
@@ -174,9 +167,6 @@ else
 set clipboard=unnamed,autoselect
 endif
 
-" colorscheme
-colorscheme Tomorrow-Night-Eighties
-
 if OSTYPE == "Darwin\n"
   noremap! ¥ \
 endif
@@ -204,3 +194,13 @@ autocmd FileType javascript let b:syntastic_checkers = findfile('.eslintrc', '.;
 
 " fzf
 set rtp+=/usr/local/opt/fzf
+
+" ステータスライン関連
+set laststatus=2
+set statusline=%F%m%r%h%w\%=%{fugitive#statusline()}[%Y]\[%{&ff}]\[%{&fileencoding}]\[%v,%l/%L]
+set wildmenu
+set wildmode=list:longest
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'zenburn'
+let g:airline#extensions#tabline#enabled = 1
+
