@@ -41,7 +41,7 @@ if dein#load_state('/home/ando/.vim/dein/repos/github.com/Shougo/dein.vim')
   call dein#add('othree/yajs.vim')
   call dein#add('mxw/vim-jsx')
   call dein#add('pmsorhaindo/syntastic-local-eslint.vim')
-  call dein#add('jnurmine/Zenburn')
+  call dein#add('nanotech/jellybeans.vim')
 
   if OSTYPE == "Darwin\n"
     call dein#add('zerowidth/vim-copy-as-rtf.git')
@@ -199,7 +199,7 @@ set rtp+=/usr/local/opt/fzf
 " colorscheme
 set background=dark
 set t_Co=256
-colorscheme zenburn
+colorscheme jellybeans
 hi Normal ctermbg=none
 
 " ステータスライン関連
@@ -208,6 +208,6 @@ set statusline=%F%m%r%h%w\%=%{fugitive#statusline()}[%Y]\[%{&ff}]\[%{&fileencodi
 set wildmenu
 set wildmode=list:longest
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'zenburn'
+let g:airline_theme = 'jellybeans'
 let g:airline#extensions#tabline#enabled = 1
 
