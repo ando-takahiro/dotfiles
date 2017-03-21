@@ -41,6 +41,7 @@ if dein#load_state('/home/ando/.vim/dein/repos/github.com/Shougo/dein.vim')
   call dein#add('othree/yajs.vim')
   call dein#add('mxw/vim-jsx')
   call dein#add('pmsorhaindo/syntastic-local-eslint.vim')
+  call dein#add('jnurmine/Zenburn')
 
   if OSTYPE == "Darwin\n"
     call dein#add('zerowidth/vim-copy-as-rtf.git')
@@ -194,6 +195,12 @@ autocmd FileType javascript let b:syntastic_checkers = findfile('.eslintrc', '.;
 
 " fzf
 set rtp+=/usr/local/opt/fzf
+
+" colorscheme
+set background=dark
+set t_Co=256
+colorscheme zenburn
+hi Normal ctermbg=none
 
 " ステータスライン関連
 set laststatus=2
