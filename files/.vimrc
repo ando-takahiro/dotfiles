@@ -1,59 +1,67 @@
 let OSTYPE = system('uname')
 
-"NeoBundle Scripts-----------------------------
-if has('vim_starting')
-  if &compatible
-    set nocompatible               " Be iMproved
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
+" Required:
+set runtimepath+=/home/ando/.vim/dein/repos/github.com/Shougo/dein.vim/repos/github.com/Shougo/dein.vim
+
+" Required:
+if dein#load_state('/home/ando/.vim/dein/repos/github.com/Shougo/dein.vim')
+  call dein#begin('/home/ando/.vim/dein/repos/github.com/Shougo/dein.vim')
+
+  " Let dein manage dein
+  " Required:
+  call dein#add('/home/ando/.vim/dein/repos/github.com/Shougo/dein.vim/repos/github.com/Shougo/dein.vim')
+
+  " Add or remove your plugins here:
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
+  call dein#add('Shougo/vimshell')
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
+  call dein#add('tpope/vim-fugitive')
+  call dein#add('flazz/vim-colorschemes')
+  call dein#add('Shougo/neocomplcache.git')
+  call dein#add('ujihisa/neco-look.git')
+  call dein#add('rking/ag.vim.git')
+  call dein#add('embear/vim-localvimrc.git')
+  call dein#add('tpope/vim-fugitive.git')
+  call dein#add('tpope/vim-unimpaired.git')
+  call dein#add('tyru/open-browser.vim.git')
+  call dein#add('vitaly/vim-gitignore.git')
+  call dein#add('tmhedberg/matchit.git')
+  call dein#add('vim-scripts/mru.vim.git')
+  call dein#add('scrooloose/nerdtree.git')
+  call dein#add('bling/vim-airline.git')
+  call dein#add('terryma/vim-multiple-cursors.git')
+  call dein#add('altercation/vim-colors-solarized')
+  call dein#add('scrooloose/syntastic.git')
+  call dein#add('othree/yajs.vim')
+  call dein#add('mxw/vim-jsx')
+  call dein#add('pmsorhaindo/syntastic-local-eslint.vim')
+
+  if OSTYPE == "Darwin\n"
+    call dein#add('zerowidth/vim-copy-as-rtf.git')
   endif
 
   " Required:
-  set runtimepath+=$HOME/.vim/bundle/neobundle.vim/
+  call dein#end()
+  call dein#save_state()
 endif
-
-" Required:
-call neobundle#begin(expand('$HOME/.vim/bundle'))
-
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-" Add or remove your Bundles here:
-NeoBundle 'Shougo/neosnippet.vim'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'flazz/vim-colorschemes'
-NeoBundle 'Shougo/neocomplcache.git'
-NeoBundle 'ujihisa/neco-look.git'
-NeoBundle 'rking/ag.vim.git'
-NeoBundle 'embear/vim-localvimrc.git'
-NeoBundle 'tpope/vim-fugitive.git'
-NeoBundle 'tpope/vim-unimpaired.git'
-NeoBundle 'tyru/open-browser.vim.git'
-NeoBundle 'vitaly/vim-gitignore.git'
-NeoBundle 'tmhedberg/matchit.git'
-NeoBundle 'vim-scripts/mru.vim.git'
-NeoBundle 'scrooloose/nerdtree.git'
-NeoBundle 'bling/vim-airline.git'
-NeoBundle 'terryma/vim-multiple-cursors.git'
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'scrooloose/syntastic.git'
-NeoBundle 'othree/yajs.vim'
-NeoBundle 'mxw/vim-jsx'
-NeoBundle 'pmsorhaindo/syntastic-local-eslint.vim'
-
-if OSTYPE == "Darwin\n"
-  NeoBundle 'zerowidth/vim-copy-as-rtf.git'
-endif
-" Required:
-call neobundle#end()
 
 " Required:
 filetype plugin indent on
+syntax enable
 
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
-"End NeoBundle Scripts-------------------------
+" If you want to install not installed plugins on startup.
+"if dein#check_install()
+"  call dein#install()
+"endif
+
+"End dein Scripts-------------------------
 
 " basic settings
 syntax on
