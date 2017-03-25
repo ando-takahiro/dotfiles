@@ -6,7 +6,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 # Setup a vim plugin, dein
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-sh ./installer.sh sh ./installer.sh
+sh ./installer.sh ~/.vim/dein
 
 # Symlinks
 for f in $DOTFILES/files/.*
