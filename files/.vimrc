@@ -17,6 +17,7 @@ if dein#load_state('$HOME/.vim/dein/repos/github.com/Shougo/dein.vim')
   call dein#add('$HOME/.vim/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
+  call dein#add('Shougo/neocomplete.vim')
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('Shougo/vimshell')
@@ -42,6 +43,10 @@ if dein#load_state('$HOME/.vim/dein/repos/github.com/Shougo/dein.vim')
   call dein#add('mxw/vim-jsx')
   call dein#add('pmsorhaindo/syntastic-local-eslint.vim')
   call dein#add('nanotech/jellybeans.vim')
+  call dein#add('tpope/vim-fugitive')
+  call dein#add('cohama/agit.vim')
+  call dein#add('idanarye/vim-merginal')
+  call dein#add('miyakogi/seiya.vim')
 
   if OSTYPE == "Darwin\n"
     call dein#add('zerowidth/vim-copy-as-rtf.git')
@@ -196,11 +201,13 @@ autocmd FileType javascript let b:syntastic_checkers = findfile('.eslintrc', '.;
 " fzf
 set rtp+=/usr/local/opt/fzf
 
+"
 " colorscheme
+"
 set background=dark
 set t_Co=256
 colorscheme jellybeans
-hi Normal ctermbg=none
+let g:seiya_auto_enable=1
 
 " ステータスライン関連
 set laststatus=2
