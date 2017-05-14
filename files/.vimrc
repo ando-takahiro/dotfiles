@@ -47,6 +47,7 @@ if dein#load_state('$HOME/.vim/dein/repos/github.com/Shougo/dein.vim')
   call dein#add('cohama/agit.vim')
   call dein#add('idanarye/vim-merginal')
   call dein#add('miyakogi/seiya.vim')
+  call dein#add('KabbAmine/zeavim.vim')
 
   if OSTYPE == "Darwin\n"
     call dein#add('zerowidth/vim-copy-as-rtf.git')
@@ -218,3 +219,9 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme = 'jellybeans'
 let g:airline#extensions#tabline#enabled = 1
 
+" Zeavim config
+let g:zv_file_types = {
+    \	'py' : 'python',
+    \	'html' : 'html',
+    \	'js' : 'javascript',
+    \ }
