@@ -2,10 +2,7 @@
 
 ## Environment variable configuration
 #
-# LANG
-# http://curiousabt.blog27.fc2.com/blog-entry-65.html
-export LANG=ja_JP.UTF-8
-export LESSCHARSET=utf-8
+export LANG=en_US.UTF-8
 
 ## Default shell configuration
 #
@@ -432,3 +429,10 @@ esac
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# .gitignore for fzf
+export FZF_DEFAULT_COMMAND='ag -g ""'

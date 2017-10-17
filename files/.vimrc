@@ -48,6 +48,9 @@ if dein#load_state('$HOME/.vim/dein/repos/github.com/Shougo/dein.vim')
   call dein#add('idanarye/vim-merginal')
   call dein#add('miyakogi/seiya.vim')
   call dein#add('KabbAmine/zeavim.vim')
+  call dein#add('Vimjas/vim-python-pep8-indent')
+  call dein#add('vim-scripts/ZoomWin')
+  call dein#add('junegunn/fzf', { 'build': './install', 'merged': 0 })
 
   if OSTYPE == "Darwin\n"
     call dein#add('zerowidth/vim-copy-as-rtf.git')
@@ -75,13 +78,16 @@ syntax on
 set ts=2 sw=2
 set softtabstop=2
 set incsearch
+set smartcase
+set ignorecase
 set autoindent
 set smarttab
 set expandtab
 set lazyredraw
 set wildmenu
 set wildmode=list:full
-set noswapfile
+set swapfile
+set backup
 set autoread
 set foldmethod=marker
 let g:localvimrc_ask = 0
@@ -178,6 +184,12 @@ if OSTYPE == "Darwin\n"
   noremap! ¥ \
 endif
 
+" syntastic
+" python
+let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_python_pylint_exec = 'pylint3'
+let g:syntastic_python_pylint_args = '-r n'
+
 " syntastic-local-eslint settins
 " http://dackdive.hateblo.jp/entry/2016/04/28/090000
 let g:syntastic_javascript_checkers=['eslint']
@@ -200,7 +212,9 @@ let g:syntastic_check_on_wq = 0
 autocmd FileType javascript let b:syntastic_checkers = findfile('.eslintrc', '.;') != '' ? ['eslint'] : ['standard']
 
 " fzf
-set rtp+=/usr/local/opt/fzf
+" set rtp+=/usr/local/opt/fzf
+" Replace the default dictionary completion with fzf-based fuzzy completion
+inoremap <expr> <c-x><c-k> fzf#complete('cat /usr/share/dict/words')
 
 "
 " colorscheme
@@ -225,3 +239,11 @@ let g:zv_file_types = {
     \	'html' : 'html',
     \	'js' : 'javascript',
     \ }
+
+"
+" Special indentation
+"
+augroup fileTypeIndent
+    autocmd!
+    autocmd BufNewFile,BufRead *.cs setlocal tabstop=4 softtabstop=4 shiftwidth=4
+augroup END

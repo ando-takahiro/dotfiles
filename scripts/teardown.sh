@@ -6,5 +6,5 @@ do
     echo $f | awk "/\/\.\.$/{exit 1}" || continue
     echo $f | awk "/~$/{exit 1}" || continue
     [ $f = .DSStore ] && continue
-    [ -e $f ] && rm $(basename $f)
+    [ -e $f ] && rm -rf $(basename $f)
 done
