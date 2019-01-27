@@ -1,1 +1,4 @@
-set clipboard=unnamed
+set clipboard=unnamedplus
+set incsearch
+set smartcase
+set ignorecase

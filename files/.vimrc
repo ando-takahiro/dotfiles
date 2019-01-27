@@ -51,6 +51,7 @@ if dein#load_state('$HOME/.vim/dein/repos/github.com/Shougo/dein.vim')
   call dein#add('Vimjas/vim-python-pep8-indent')
   call dein#add('vim-scripts/ZoomWin')
   call dein#add('junegunn/fzf', { 'build': './install', 'merged': 0 })
+  call dein#add('vim-scripts/ShaderHighLight')
 
   if OSTYPE == "Darwin\n"
     call dein#add('zerowidth/vim-copy-as-rtf.git')
@@ -86,7 +87,6 @@ set expandtab
 set lazyredraw
 set wildmenu
 set wildmode=list:full
-set swapfile
 set backup
 set autoread
 set foldmethod=marker

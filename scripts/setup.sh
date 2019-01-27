@@ -16,6 +16,10 @@ do
     [ $f = .DSStore ] && continue
     ln -s $f
 done
+ln -s $DOTFILES/files/util
 
 # Setup vim
 vim -c ':call dein#install()' -c ':q!'
+
+# pyinvoke completion
+git clone git@github.com:pyinvoke/invoke.git ~/pyinvoke

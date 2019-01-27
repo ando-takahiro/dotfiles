@@ -1,0 +1,11 @@
+#!/bin/bash
+
+PYTHON=python3.6
+
+$PYTHON -m venv venv --without-pip
+. venv/bin/activate
+cd venv/
+curl https://bootstrap.pypa.io/get-pip.py | python
+deactivate
+. bin/activate
+cd ..

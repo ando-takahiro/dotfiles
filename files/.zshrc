@@ -319,7 +319,7 @@ dumb)
 esac
 
 export EDITOR=vim
-export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/bin:$HOME/util
 
 expand-to-home-or-insert () {
         if [ "$LBUFFER" = "" -o "$LBUFFER[-1]" = " " ]; then
@@ -436,3 +436,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # .gitignore for fzf
 export FZF_DEFAULT_COMMAND='ag -g ""'
+
+# .pyinvoke completion
+source ~/pyinvoke/completion/$(basename $SHELL)
