@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PYTHON=python3.6
+PYTHON=python3
 
 $PYTHON -m venv venv --without-pip
 . venv/bin/activate
