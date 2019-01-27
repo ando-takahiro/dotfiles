@@ -195,8 +195,15 @@ bindkey "^n" history-beginning-search-forward-end
 bindkey "\\ep" history-beginning-search-backward-end
 bindkey "\\en" history-beginning-search-forward-end
 
+# fzfでのインクリメンタルサーチ
+function select-history() {
+  BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt="History > ")
+  CURSOR=$#BUFFER
+}
+zle -N select-history
+bindkey '^r' select-history
+# bindkey '^R' history-incremental-pattern-search-backward
 # glob(*)によるインクリメンタルサーチ
-bindkey '^R' history-incremental-pattern-search-backward
 bindkey '^S' history-incremental-pattern-search-forward
 
 ## Command history configuration
@@ -409,8 +416,16 @@ function __rm_single_file(){
        fi
 }
 
-## alias設定
-#
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# .gitignore for fzf
+export FZF_DEFAULT_COMMAND='ag -g ""'
+
+# extra settings(os, local, etc...)
+
+# alias設定
 [ -f ~/.zshrc.alias ] && source ~/.zshrc.alias
 
 case "${OSTYPE}" in
@@ -424,12 +439,7 @@ linux*)
     ;;
 esac
 
-## local固有設定
-#
-[ -f ~/.zshrc.local ] && source ~/.zshrc.local
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
+# nvm(node virtual machine)
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -438,4 +448,9 @@ export NVM_DIR="$HOME/.nvm"
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
 # .pyinvoke completion
-source ~/pyinvoke/completion/$(basename $SHELL)
+[ -s "~/pyinvoke/completion/$(basename $SHELL)" ] && source ~/pyinvoke/completion/$(basename $SHELL)
+
+# local固有設定
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
