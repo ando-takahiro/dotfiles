@@ -11,7 +11,8 @@
 ### Install
 
  1. Clear dot files in your home directory
- 1. Install *git, zsh, vim, tmux (on LInux: xdg-utils)*
+ 1. Install *git, zsh, vim, tmux (on Linux: xdg-utils)*
+ 1. Install [NERD fonts](https://github.com/ryanoasis/nerd-fonts), and chose as terminal and vim font
  1. `chsh -s /bin/zsh`
  1. Relogin
  1. `git clone $(THIS_REPO)`
